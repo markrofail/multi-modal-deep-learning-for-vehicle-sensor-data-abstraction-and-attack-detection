@@ -1,0 +1,15 @@
+diff --git a/config_multimodal.yml b/config_multimodal.yml
+index 1967c4a..0cec7e6 100644
+--- a/config_multimodal.yml
++++ b/config_multimodal.yml
+@@ -21,8 +21,8 @@ HYPERPARAMETERS:
+ #################################################################################
+ NETWORK_ARCHITECTURE:
+   LAYER_1_SIZE: 2048      # number of neurons in the first classifier layer
+-  LAYER_2_SIZE: 2048      # number of neurons in the second classifier layer
+-  LAYER_3_STATUS: off      # indicates if there is a third classifier layer
++  LAYER_2_SIZE: 1024      # number of neurons in the second classifier layer
++  LAYER_3_STATUS: on      # indicates if there is a third classifier layer
+   LAYER_3_SIZE: 512       # number of neurons in the third classifier layer
+ 
+ 

@@ -1,0 +1,73 @@
+#################################################################################
+# Model Optimization Parameters                                                 #
+#################################################################################
+HYPERPARAMETERS:
+  BETA1: 0.9              # exponential decay rate for the first moment estimates 
+  BETA2: 0.999            # exponential decay rate for the second moment estimates 
+  EPSILON: 10e-8          # very small number that prevents division by zero error 
+
+  LEARNING_RATE: 10e-3    # rate of weight adjustment with respect to the loss gradient
+
+  BATCH_SIZE: 4           # number of training examples per iteration
+  EPOCHS: 200             # number of epochs training is running for
+
+  EARLY_STOPPING: false   # indicates early stopping
+  PATIENCE: 20            # used for early stopping, if the loss doesn't
+                          # improve after specified epochs it terminates
+
+
+#################################################################################
+# Network Architecture                                                          #
+#################################################################################
+NETWORK_ARCHITECTURE:
+  LAYER_1_SIZE: 2048      # number of neurons in the first classifier layer
+  LAYER_2_SIZE: 1024      # number of neurons in the second classifier layer
+  LAYER_3_STATUS: off     # indicates if there is a third classifier layer
+  LAYER_3_SIZE: 512       # number of neurons in the third classifier layer
+
+
+#################################################################################
+# Enviroment Configeration                                                      #
+#################################################################################
+ENVIROMENT_CONFIG:
+  SAVE_EVERY: 1           # model is saved every specified epochs
+
+  VERBOSE: 1              # verbosity flag
+                          # SILENT: 0, NORMAL:1, DEBUG:2
+
+#################################################################################
+# Data Description                                                              #
+#################################################################################
+DATA_INFORMATION:
+  IMAGE_HEIGHT: &IMAGE_HEIGHT 352
+  IMAGE_WIDTH:  &IMAGE_WIDTH  1216
+  IMAGE_SIZE: 
+    - *IMAGE_WIDTH
+    - *IMAGE_HEIGHT
+
+#################################################################################
+# Dataset Generation Parameters                                                 #
+#################################################################################
+DATASET:
+  RANDOM: true            # if true, dataset is generated randomly,
+                          # else it is read from the regnet CSV 
+
+  COMBINED: true          # if true, a dataset containing both attack 
+                          # types is created (ATTACK_TYPE is diregarded)
+
+  ATTACK_TYPE: 2          # an int that specifies the attack type
+                          # INPAINT: 1
+                          # TRANSLATE: 2
+
+  TRANSLATION_CONST: 50   # how much the objects are translated
+                          # in the translation attack
+
+  MASK_PAD_KERNEL: 3      # mask padding parameters (window)
+  MASK_PAD_ITERATIONS: 5  # mask padding parameters (number of times dilation is performed)
+
+  # NUM_FRAMES: 100         # size of the dataset (toy dataset)
+  NUM_FRAMES: 18750     # size of the dataset (original regnet size)
+
+  TRAIN_PCT: 0.8          # percentage of dataset as training dataset
+  VALID_PCT: 0.1          # percentage of dataset as validation dataset
+  TEST_PCT: 0.1           # percentage of dataset as test dataset

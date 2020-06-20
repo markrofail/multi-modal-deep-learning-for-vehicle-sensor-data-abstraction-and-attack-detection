@@ -1,0 +1,13 @@
+=======================Inpainting Algorithm Statistics=======================
++ Test across 108 images
+
+
++ Before inpainting:    4946571
+
+
++ Object pixels left by:
+- CV Telea:             875814  ↓82.29%
+- CV Navier-Stokes:     654999  ↓86.76%
+- Skimage:              0       ↓100.00%
+- Magenta:              0       ↓100.00%
+=============================================================================
