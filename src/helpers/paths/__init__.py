@@ -86,7 +86,7 @@ def get_all_frames(drive_date, drive):
   return list(zip(drive_dates, drives, frames))
 
 ROOT_PATH = _find_ROOT(Path(__file__).absolute())
-DATA_PATH = ROOT_PATH.joinpath('data')
+DATA_PATH = ROOT_PATH.joinpath('dataset')
 
 DATA_EXTERNAL_PATH = DATA_PATH.joinpath('external')
 DATA_RAW_PATH = DATA_PATH.joinpath('raw')

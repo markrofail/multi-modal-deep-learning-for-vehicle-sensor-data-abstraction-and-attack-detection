@@ -75,18 +75,18 @@ target/
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 
-# exclude data from source control by default
-!/data/
-/data/**
-!/data/external
-/data/external/**
-!/data/interim
-/data/interim/**
-!/data/processed
-/data/processed/**
-!/data/raw
-/data/raw/**
-!/data/**/.gitkeep
+# exclude dataset from source control by default
+!/dataset/
+/dataset/**
+!/dataset/external
+/dataset/external/**
+!/dataset/interim
+/dataset/interim/**
+!/dataset/processed
+/dataset/processed/**
+!/dataset/raw
+/dataset/raw/**
+!/dataset/**/.gitkeep
 
 # exclude external libraries
 /external_libraries/

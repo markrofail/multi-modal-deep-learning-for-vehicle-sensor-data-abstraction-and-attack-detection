@@ -56,9 +56,9 @@ endif
 .PHONY: clean_data data_clean
 ## Destroy Dataset
 clean_data data_clean:
-	$(RM) -r data/raw/*
-	$(RM) -r data/interim/*
-	$(RM) -r data/processed/*
+	$(RM) -r dataset/raw/*
+	$(RM) -r dataset/interim/*
+	$(RM) -r dataset/processed/*
 
 .PHONY: train learn
 ## Train The Model
